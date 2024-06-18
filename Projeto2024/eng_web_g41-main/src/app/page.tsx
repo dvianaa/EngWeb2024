@@ -15,14 +15,8 @@ export default async function Home() {
           <div className="text-4xl font-bold">
           Braga<span className="text-[hsl(216,88%,48%)]">City</span>
           </div>
-          <div className="flex items-center justify-center">
-            <Search
-              size="large"
-              placeholder="Pesquisar..." 
-              allowClear
-              enterButton
-              className="w-96 border border-[hsl(215,100%,55%)] rounded-lg m-8"
-            />
+          <div className="m-12 text-3xl text-white p-6 bg-[hsl(216,88%,48%)] rounded-[20px]">
+            Bem vindo às ruas de Braga!
           </div>
         </div>
       </main>

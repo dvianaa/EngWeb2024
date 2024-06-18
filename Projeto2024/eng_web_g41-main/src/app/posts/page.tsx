@@ -5,6 +5,8 @@ import PostCard from "../_components/PostCard";
 import Navbar from "../_components/Navbar";
 import { api } from "~/trpc/react";
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface Post {
   id: string;
@@ -22,9 +24,14 @@ export default function Home() {
   const [sortCriteria, setSortCriteria] = useState('all');
   const [posts, setPosts] = useState<Post[]>([]);
 
-  
-
   const { data: fetchedPosts, isLoading, isError } = api.posts.getAll.useQuery();
+
+  const session = useSession();
+  const router = useRouter();
+
+  if (!session.data) {
+    router.push("/");
+  }
 
   useEffect(() => {
     if (fetchedPosts) {

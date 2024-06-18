@@ -14,7 +14,9 @@ export const ruasRouter = createTRPCRouter({
     .query(async ({ input, ctx }) => {
       const { searchTerm, freguesia, concelho, numCasas } = input;
       const filterOptions: any = {};
-      
+
+      console.log(process.env.DATABASE_URL)
+
       if (searchTerm) {
         filterOptions.nome = {
           contains: searchTerm,

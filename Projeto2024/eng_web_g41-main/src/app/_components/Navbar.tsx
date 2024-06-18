@@ -31,9 +31,12 @@ const Navbar = () => {
               Braga <span className="text-[hsl(216,88%,48%)]">City</span>
             </Link>
             <div className="flex gap-12">
-              <Link href="/posts" className="text-lg">
-                Posts
-              </Link>
+              { (session.data) ? (
+                <Link href="/posts" className="text-lg">
+                  Posts
+                </Link>
+              ) : null
+              }
               <Link href="/freguesias" className="text-lg">
                 Freguesias
               </Link>

@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { InboxOutlined } from '@ant-design/icons';
-import Layout from "../../layout";
-import Navbar from "../../_components/Navbar";
+import Layout from "../layout";
+import Navbar from "../_components/Navbar";
 import { message, Upload } from 'antd';
 import type { UploadProps } from 'antd';
+import WithRoleProtection from '../_components/withRoleProtection';
 
 const { Dragger } = Upload;
 
@@ -43,6 +44,7 @@ const AdicionarRuaPage = () => {
   };
 
   return (
+    <WithRoleProtection role="admin">
     <Layout>
       <main className="flex h-screen w-full bg-white text-black">
         <Navbar />
@@ -94,6 +96,7 @@ const AdicionarRuaPage = () => {
         </div>
       </main>
     </Layout>
+    </WithRoleProtection>
   );
 };
 

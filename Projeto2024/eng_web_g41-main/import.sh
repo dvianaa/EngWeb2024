@@ -33,6 +33,8 @@ tables=(
     "Account"
     "Session"
     "User"
+    "Comment"
+    "Like"
     "VerificationToken"
     "Rua"
     "Figura"

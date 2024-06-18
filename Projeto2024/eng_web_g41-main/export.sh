@@ -29,6 +29,8 @@ tables=(
     "Account"
     "Session"
     "User"
+    "Comment"
+    "Like"
     "VerificationToken"
     "Rua"
     "Figura"
@@ -39,5 +41,5 @@ for table in "${tables[@]}"; do
     export_table "$table"
 done
 
-echo "Exportação concluída. Os arquivos SQL estão em '$output_dir'."
+echo "Exportação concluída. Os arquivos SQL estão em '$output_dir'." 
 
